@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="GrayButtonConfig" format=3 uid="uid://cumjt6og6eb1r"]
+
+[ext_resource type="Script" uid="uid://hg8fwh6dxd5o" path="res://GrayButton/gray_button_config.gd" id="1_8ygn2"]
+
+[resource]
+script = ExtResource("1_8ygn2")
+text = "+1"
+points_per_click = 1
+base_delay = 1.0
+description = "Adds clicks one at a time.
+
+[b]Clicks:[/b] 1
+[b]Cooldown:[/b] 1s"
+metadata/_custom_type_script = "uid://hg8fwh6dxd5o"

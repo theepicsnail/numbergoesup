@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://dkjy1m4b8004q"]
+
+[ext_resource type="Script" uid="uid://cptmendiniiil" path="res://EventReceiver.gd" id="1_cdowr"]
+[ext_resource type="PackedScene" uid="uid://dilf7pgnrepx6" path="res://Main.tscn" id="2_7ibg8"]
+
+[sub_resource type="World3D" id="World3D_iplrv"]
+
+[node name="root" type="Window" unique_id=1001812897]
+process_mode = 1
+auto_translate_mode = 1
+world_3d = SubResource("World3D_iplrv")
+audio_listener_enable_2d = true
+audio_listener_enable_3d = true
+physics_object_picking = true
+gui_embed_subwindows = true
+positional_shadow_atlas_size = 4096
+oversampling_override = 1.0
+title = "NumberGoesUp"
+position = Vector2i(7, 75)
+size = Vector2i(960, 540)
+borderless = true
+min_size = Vector2i(64, 64)
+content_scale_size = Vector2i(960, 540)
+content_scale_aspect = 1
+
+[node name="EventReceiver" type="Node" parent="." unique_id=1770002909]
+script = ExtResource("1_cdowr")
+
+[node name="Node2D" parent="." unique_id=1812214141 instance=ExtResource("2_7ibg8")]

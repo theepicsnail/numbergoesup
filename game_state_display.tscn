@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://bstln4tjpglng"]
+
+[ext_resource type="Script" uid="uid://qbefr06qqc0k" path="res://game_state_display.gd" id="1_s1wqk"]
+
+[node name="GameStateDisplay" type="Node2D" unique_id=860259228]
+script = ExtResource("1_s1wqk")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=965429056]
+
+[node name="GridContainer" type="GridContainer" parent="CanvasLayer" unique_id=1085555123]
+offset_right = 480.0
+offset_bottom = 480.0
+columns = 5

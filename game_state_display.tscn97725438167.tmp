@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://bstln4tjpglng"]
+
+[ext_resource type="Script" uid="uid://qbefr06qqc0k" path="res://game_state_display.gd" id="1_s1wqk"]
+
+[node name="GameStateDisplay" type="Node2D" unique_id=860259228]
+script = ExtResource("1_s1wqk")
+
+[node name="GridContainer" type="GridContainer" parent="." unique_id=1085555123]
+offset_right = 40.0
+offset_bottom = 40.0
+columns = 5

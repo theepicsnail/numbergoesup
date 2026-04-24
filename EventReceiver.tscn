@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://8xhkfwax6rke"]
+
+[ext_resource type="Script" uid="uid://cptmendiniiil" path="res://EventReceiver.gd" id="1_g6pcu"]
+
+[node name="Node" type="Node" unique_id=1959649476]
+script = ExtResource("1_g6pcu")

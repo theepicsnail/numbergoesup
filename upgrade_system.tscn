@@ -1,0 +1,116 @@
+[gd_scene format=3 uid="uid://cko4628amcudj"]
+
+[ext_resource type="Script" uid="uid://rk63dn6100q1" path="res://upgrade_overlay.gd" id="1_sb457"]
+[ext_resource type="PackedScene" uid="uid://bo5vuealx4u0r" path="res://GrayButton/GrayButtonUpgradeDisplay.tscn" id="2_5w055"]
+[ext_resource type="Resource" uid="uid://cumjt6og6eb1r" path="res://GrayButton/G1.tres" id="3_vc6cg"]
+[ext_resource type="Resource" uid="uid://ce750n0ye76ku" path="res://GrayButton/G10.tres" id="4_5w055"]
+
+[node name="UpgradeSystem" type="Control" unique_id=628409884]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_sb457")
+
+[node name="UpgradeButton" type="Button" parent="." unique_id=1688317421]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 308.0
+offset_top = 254.0
+offset_right = 484.0
+offset_bottom = 285.0
+size_flags_vertical = 8
+disabled = true
+text = "Upgrade"
+
+[node name="UpgradeDialog" type="ColorRect" parent="." unique_id=73993837]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.57254905)
+
+[node name="CenterContainer" type="CenterContainer" parent="UpgradeDialog" unique_id=451547325]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Control" type="Control" parent="UpgradeDialog/CenterContainer" unique_id=25555256]
+custom_minimum_size = Vector2(400, 500)
+layout_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="UpgradeDialog/CenterContainer/Control" unique_id=2063198228]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.21316531, 0.57965475, 0.7332832, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="UpgradeDialog/CenterContainer/Control/ColorRect" unique_id=151771117]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UpgradeDialog/CenterContainer/Control/ColorRect/MarginContainer" unique_id=678291549]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UpgradeDialog/CenterContainer/Control/ColorRect/MarginContainer/VBoxContainer" unique_id=1670790341]
+layout_mode = 2
+
+[node name="GreyButtonUpgradeDisplay" parent="UpgradeDialog/CenterContainer/Control/ColorRect/MarginContainer/VBoxContainer/HBoxContainer" unique_id=839385007 instance=ExtResource("2_5w055")]
+layout_mode = 2
+config = ExtResource("3_vc6cg")
+
+[node name="GreyButtonUpgradeDisplay2" parent="UpgradeDialog/CenterContainer/Control/ColorRect/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1703039680 instance=ExtResource("2_5w055")]
+layout_mode = 2
+config = ExtResource("3_vc6cg")
+
+[node name="GreyButtonUpgradeDisplay3" parent="UpgradeDialog/CenterContainer/Control/ColorRect/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1168914554 instance=ExtResource("2_5w055")]
+layout_mode = 2
+config = ExtResource("4_5w055")
+
+[node name="UpgradeDescription" type="RichTextLabel" parent="UpgradeDialog/CenterContainer/Control/ColorRect/MarginContainer/VBoxContainer" unique_id=1297406263]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+bbcode_enabled = true
+fit_content = true
+
+[node name="UpgradeCancel" type="Button" parent="UpgradeDialog/CenterContainer/Control/ColorRect/MarginContainer/VBoxContainer" unique_id=284328533]
+layout_mode = 2
+text = "Cancel"
+
+[connection signal="pressed" from="UpgradeButton" to="." method="_on_upgrade_button_pressed"]
+[connection signal="upgrade_hovered" from="UpgradeDialog/CenterContainer/Control/ColorRect/MarginContainer/VBoxContainer/HBoxContainer/GreyButtonUpgradeDisplay" to="." method="_on_option_hovered"]
+[connection signal="upgrade_selected" from="UpgradeDialog/CenterContainer/Control/ColorRect/MarginContainer/VBoxContainer/HBoxContainer/GreyButtonUpgradeDisplay" to="." method="_on_option_selected"]
+[connection signal="upgrade_hovered" from="UpgradeDialog/CenterContainer/Control/ColorRect/MarginContainer/VBoxContainer/HBoxContainer/GreyButtonUpgradeDisplay2" to="." method="_on_option_hovered"]
+[connection signal="upgrade_selected" from="UpgradeDialog/CenterContainer/Control/ColorRect/MarginContainer/VBoxContainer/HBoxContainer/GreyButtonUpgradeDisplay2" to="." method="_on_option_selected"]
+[connection signal="upgrade_hovered" from="UpgradeDialog/CenterContainer/Control/ColorRect/MarginContainer/VBoxContainer/HBoxContainer/GreyButtonUpgradeDisplay3" to="." method="_on_option_hovered"]
+[connection signal="upgrade_selected" from="UpgradeDialog/CenterContainer/Control/ColorRect/MarginContainer/VBoxContainer/HBoxContainer/GreyButtonUpgradeDisplay3" to="." method="_on_option_selected"]
+[connection signal="pressed" from="UpgradeDialog/CenterContainer/Control/ColorRect/MarginContainer/VBoxContainer/UpgradeCancel" to="." method="_on_upgrade_cancel_pressed"]

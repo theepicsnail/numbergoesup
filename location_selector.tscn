@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://bg2tf12s1ib5n"]
+
+[ext_resource type="Script" uid="uid://cl21wclqq6igk" path="res://location_selector.gd" id="1_0dyo6"]
+[ext_resource type="PackedScene" uid="uid://dcbh3vsmtrhr0" path="res://button_grid.tscn" id="2_7ockj"]
+
+[node name="LocationSelector" type="PanelContainer" unique_id=1653094526]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -241.0
+offset_top = -241.0
+offset_right = 100.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_0dyo6")
+
+[node name="ButtonGrid" parent="." unique_id=1042446690 instance=ExtResource("2_7ockj")]
+unique_name_in_owner = true
+layout_mode = 2

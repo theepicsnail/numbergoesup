@@ -1,0 +1,210 @@
+[gd_scene format=3 uid="uid://dilf7pgnrepx6"]
+
+[ext_resource type="Script" uid="uid://d2bn1iihlkvfk" path="res://main.gd" id="1_glv2v"]
+[ext_resource type="PackedScene" uid="uid://bx2pt4d5fkis1" path="res://GrayButton/GrayButtonScene.tscn" id="3_cm0pq"]
+[ext_resource type="Script" uid="uid://rk63dn6100q1" path="res://upgrade_overlay.gd" id="4_cm0pq"]
+[ext_resource type="Resource" uid="uid://cumjt6og6eb1r" path="res://GrayButton/G1.tres" id="4_fos0i"]
+[ext_resource type="PackedScene" uid="uid://bo5vuealx4u0r" path="res://GrayButton/GrayButtonUpgradeDisplay.tscn" id="5_fos0i"]
+
+[node name="Node2D" type="Node2D" unique_id=1812214141]
+script = ExtResource("1_glv2v")
+
+[node name="Display" type="CanvasLayer" parent="." unique_id=971883848]
+follow_viewport_enabled = true
+
+[node name="BackgroundColor" type="ColorRect" parent="Display" unique_id=55942959]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(0.055999983, 0.32, 0.032000005, 1)
+
+[node name="Left" type="MarginContainer" parent="Display" unique_id=124857179]
+anchors_preset = -1
+anchor_right = 0.2
+anchor_bottom = 1.0
+offset_right = 0.07998657
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Display/Left" unique_id=892128585]
+layout_mode = 2
+
+[node name="Label1" type="Label" parent="Display/Left/VBoxContainer" unique_id=2088375301]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Score:"
+
+[node name="ScoreDisplay" type="Label" parent="Display/Left/VBoxContainer" unique_id=1211672557]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "0"
+horizontal_alignment = 2
+
+[node name="Label2" type="Label" parent="Display/Left/VBoxContainer" unique_id=1368480463]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Next Upgrade:"
+
+[node name="NextUpgradeDisplay" type="Label" parent="Display/Left/VBoxContainer" unique_id=1105516984]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "12345"
+horizontal_alignment = 2
+
+[node name="Center2" type="MarginContainer" parent="Display" unique_id=1473891852]
+anchors_preset = -1
+anchor_left = 0.2
+anchor_right = 0.8
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="ButtonArea" type="CenterContainer" parent="Display/Center2" unique_id=1513100826]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+
+[node name="ButtonAreaBG" type="ColorRect" parent="Display/Center2/ButtonArea" unique_id=1690373907]
+custom_minimum_size = Vector2(524, 524)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+color = Color(0, 0.31, 0.26349998, 1)
+
+[node name="ButtonGrid" type="GridContainer" parent="Display/Center2/ButtonArea" unique_id=368570729]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 3
+theme_type_variation = &"A"
+
+[node name="+1" parent="Display/Center2/ButtonArea/ButtonGrid" unique_id=616834264 instance=ExtResource("3_cm0pq")]
+layout_mode = 2
+config = ExtResource("4_fos0i")
+
+[node name="UpgradeSystem" type="Control" parent="Display" unique_id=1429371045]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("4_cm0pq")
+
+[node name="UpgradeButton" type="Button" parent="Display/UpgradeSystem" unique_id=1535032706]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 308.0
+offset_top = 254.0
+offset_right = 484.0
+offset_bottom = 285.0
+size_flags_vertical = 8
+text = "Upgrade"
+
+[node name="UpgradeDialog" type="ColorRect" parent="Display/UpgradeSystem" unique_id=1622873591]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.57254905)
+
+[node name="CenterContainer" type="CenterContainer" parent="Display/UpgradeSystem/UpgradeDialog" unique_id=1017572192]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Control" type="Control" parent="Display/UpgradeSystem/UpgradeDialog/CenterContainer" unique_id=1482893770]
+custom_minimum_size = Vector2(400, 500)
+layout_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="Display/UpgradeSystem/UpgradeDialog/CenterContainer/Control" unique_id=1615490227]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.21316531, 0.57965475, 0.7332832, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="Display/UpgradeSystem/UpgradeDialog/CenterContainer/Control/ColorRect" unique_id=1852830072]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Display/UpgradeSystem/UpgradeDialog/CenterContainer/Control/ColorRect/MarginContainer" unique_id=1959987989]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Display/UpgradeSystem/UpgradeDialog/CenterContainer/Control/ColorRect/MarginContainer/VBoxContainer" unique_id=1688736897]
+layout_mode = 2
+
+[node name="GreyButtonUpgradeDisplay" parent="Display/UpgradeSystem/UpgradeDialog/CenterContainer/Control/ColorRect/MarginContainer/VBoxContainer/HBoxContainer" unique_id=839385007 instance=ExtResource("5_fos0i")]
+layout_mode = 2
+
+[node name="GreyButtonUpgradeDisplay2" parent="Display/UpgradeSystem/UpgradeDialog/CenterContainer/Control/ColorRect/MarginContainer/VBoxContainer/HBoxContainer" unique_id=710008747 instance=ExtResource("5_fos0i")]
+layout_mode = 2
+
+[node name="GreyButtonUpgradeDisplay3" parent="Display/UpgradeSystem/UpgradeDialog/CenterContainer/Control/ColorRect/MarginContainer/VBoxContainer/HBoxContainer" unique_id=2026513826 instance=ExtResource("5_fos0i")]
+layout_mode = 2
+
+[node name="UpgradeDescription" type="RichTextLabel" parent="Display/UpgradeSystem/UpgradeDialog/CenterContainer/Control/ColorRect/MarginContainer/VBoxContainer" unique_id=1145943875]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+fit_content = true
+
+[node name="UpgradeCancel" type="Button" parent="Display/UpgradeSystem/UpgradeDialog/CenterContainer/Control/ColorRect/MarginContainer/VBoxContainer" unique_id=90304266]
+layout_mode = 2
+text = "Cancel"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Display" unique_id=1111623834]
+visible = false
+offset_left = 299.0
+offset_top = 140.0
+offset_right = 664.0
+offset_bottom = 469.0
+bbcode_enabled = true
+text = "Adds clicks 10 at a time.
+
+[b]Clicks:[/b] 10
+[b]Cooldown:[/b] 2s
+"
+
+[connection signal="pressed" from="Display/UpgradeSystem/UpgradeButton" to="Display/UpgradeSystem" method="_on_upgrade_button_pressed"]
+[connection signal="pressed" from="Display/UpgradeSystem/UpgradeDialog/CenterContainer/Control/ColorRect/MarginContainer/VBoxContainer/UpgradeCancel" to="Display/UpgradeSystem" method="_on_upgrade_cancel_pressed"]

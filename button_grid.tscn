@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://dcbh3vsmtrhr0"]
+
+[ext_resource type="Script" uid="uid://cjgdqbc6hs7g0" path="res://button_grid.gd" id="1_8op02"]
+
+[node name="ButtonGrid" type="Control" unique_id=1042446690]
+layout_mode = 3
+anchors_preset = 0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_8op02")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1707007657]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = -50.0
+offset_right = 50.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=1724346043]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Container,0,0" type="Control" parent="VBoxContainer/HBoxContainer" unique_id=1322845409]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6

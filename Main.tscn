@@ -1,0 +1,148 @@
+[gd_scene format=3 uid="uid://dilf7pgnrepx6"]
+
+[ext_resource type="Script" uid="uid://d2bn1iihlkvfk" path="res://main.gd" id="1_glv2v"]
+[ext_resource type="PackedScene" uid="uid://dcbh3vsmtrhr0" path="res://button_grid.tscn" id="2_cm0pq"]
+[ext_resource type="PackedScene" uid="uid://bg2tf12s1ib5n" path="res://location_selector.tscn" id="4_3dxm6"]
+[ext_resource type="PackedScene" uid="uid://cko4628amcudj" path="res://upgrade_system.tscn" id="4_cm0pq"]
+
+[node name="Node2D" type="Node2D" unique_id=1812214141]
+script = ExtResource("1_glv2v")
+
+[node name="Display" type="CanvasLayer" parent="." unique_id=971883848]
+follow_viewport_enabled = true
+
+[node name="BackgroundColor" type="ColorRect" parent="Display" unique_id=55942959]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(0.055999983, 0.32, 0.032000005, 1)
+
+[node name="Left" type="MarginContainer" parent="Display" unique_id=124857179]
+anchors_preset = -1
+anchor_right = 0.2
+anchor_bottom = 1.0
+offset_right = 0.07998657
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Display/Left" unique_id=892128585]
+layout_mode = 2
+
+[node name="Label1" type="Label" parent="Display/Left/VBoxContainer" unique_id=2088375301]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Score:"
+
+[node name="ScoreDisplay" type="Label" parent="Display/Left/VBoxContainer" unique_id=1211672557]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "0"
+horizontal_alignment = 2
+
+[node name="Label2" type="Label" parent="Display/Left/VBoxContainer" unique_id=1368480463]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Next Upgrade:"
+
+[node name="NextUpgradeDisplay" type="Label" parent="Display/Left/VBoxContainer" unique_id=1105516984]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "123"
+horizontal_alignment = 2
+
+[node name="Label3" type="Label" parent="Display/Left/VBoxContainer" unique_id=604670754]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Manual Clicks:"
+
+[node name="ManualClicksDisplay" type="Label" parent="Display/Left/VBoxContainer" unique_id=1208716287]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "0"
+horizontal_alignment = 2
+
+[node name="Center2" type="MarginContainer" parent="Display" unique_id=1473891852]
+anchors_preset = -1
+anchor_left = 0.2
+anchor_right = 0.8
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="ButtonArea" type="CenterContainer" parent="Display/Center2" unique_id=1513100826]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+
+[node name="ButtonAreaBG" type="ColorRect" parent="Display/Center2/ButtonArea" unique_id=1690373907]
+custom_minimum_size = Vector2(524, 524)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+color = Color(0, 0.31, 0.26349998, 1)
+
+[node name="ButtonGrid" parent="Display/Center2/ButtonArea" unique_id=1042446690 instance=ExtResource("2_cm0pq")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="LocationSelector" parent="Display/Center2/ButtonArea" unique_id=1276024432 instance=ExtResource("4_3dxm6")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+
+[node name="UpgradeSystem" parent="Display" unique_id=628409884 instance=ExtResource("4_cm0pq")]
+unique_name_in_owner = true
+mouse_filter = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Display" unique_id=1111623834]
+visible = false
+offset_left = 299.0
+offset_top = 140.0
+offset_right = 664.0
+offset_bottom = 469.0
+bbcode_enabled = true
+text = "Adds clicks 10 at a time.
+
+[b]Clicks:[/b] 10
+[b]Cooldown:[/b] 2s
+"
+
+[node name="Description" type="RichTextLabel" parent="Display" unique_id=79791003]
+unique_name_in_owner = true
+visible = false
+anchors_preset = -1
+anchor_left = 0.77300006
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -0.080078125
+offset_bottom = -36.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+bbcode_enabled = true
+text = "Adds clicks 10 at a time.
+
+[b]Clicks:[/b] 10
+[b]Cooldown:[/b] 2s"
+fit_content = true
+
+[connection signal="location_selected" from="Display/Center2/ButtonArea/LocationSelector" to="." method="_on_upgrade_location_selected"]
+[connection signal="upgrade_selected" from="Display/UpgradeSystem" to="." method="_on_upgrade_selected"]
