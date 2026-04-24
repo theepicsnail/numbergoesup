@@ -7,6 +7,11 @@ script = ExtResource("1_s1wqk")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=965429056]
 
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=1407335930]
+offset_right = 960.0
+offset_bottom = 540.0
+color = Color(0.038535737, 0.09151705, 0.12575802, 1)
+
 [node name="GridContainer" type="GridContainer" parent="CanvasLayer" unique_id=1085555123]
 offset_right = 480.0
 offset_bottom = 480.0
